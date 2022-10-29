@@ -30,11 +30,32 @@
       </div>
       <!-- top-buttons -->
 
+      <div class="badges">
+        <img
+          src="./images/badge-like.png"
+          alt="Like Badge"
+          class="like-badge"
+          id="like-badge"
+        />
+        <img
+          src="./images/badge-nope.png"
+          alt="Nope Badge"
+          class="nope-badge"
+          id="nope-badge"
+        />
+      </div>
       <div class="profile-section" id="profile-section"></div>
-
       <div class="bottom-buttons" id="bottom-buttons">
-        <img src="./images/icon-cross.png" alt="Reject" />
-        <img src="./images/icon-heart.png" alt="Like" />
+        <div class="reject-button" id="reject-btn" data-reject="reject">
+          <img
+            src="./images/icon-cross.png"
+            alt="Reject"
+            data-reject="reject"
+          />
+        </div>
+        <div class="like-button" data-like="like">
+          <img src="./images/icon-heart.png" alt="Like" data-like="like" />
+        </div>
       </div>
     </div>
     <!-- container -->

@@ -18,10 +18,10 @@ img {
   left: 0px;
   top: 0px;
   right: 0;
-  border: 2px solid red;
-  border-radius: 8px;
+  border: 4px solid black;
+  border-radius: 25px;
   margin: 0 auto;
-  padding: 0.5em;
+  padding: 0.3em;
 }
 
 .top-buttons img {
@@ -38,27 +38,66 @@ img {
 .bottom-buttons {
   display: flex;
   justify-content: center;
-  column-gap: 2em;
-  height: 2em;
-  margin: 1em 0;
+  column-gap: 1.5em;
+  height: fit-content;
+  margin: 0.4em 0 0;
+  position: relative;
 }
 
 .profile-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  max-height: 562px;
+  align-items: center;
 }
 
-.photo-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.profile-section img {
+  max-height: 562px;
+  min-width: 100%;
+}
+
+.no-profiles {
+  color: red;
+  font-weight: bold;
 }
 
 .bio-section {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 5em;
   color: white;
   padding: 1em;
+}
+
+.reject-button,
+.like-button {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 85px;
+  height: 85px;
+  box-shadow: 0px 10px 20px #e9e9ea;
+}
+
+.reject-button:hover,
+.like-button:hover {
+  background-color: #dbfff4;
+}
+
+.like-badge,
+.nope-badge {
+  position: absolute;
+  top: 3.5em;
+  left: 0;
+  width: 60%;
+  transform: rotate(-25deg) scale(0.8);
+  display: none;
+}
+
+.transition {
+  display: inline;
+  transition: 200ms;
 }

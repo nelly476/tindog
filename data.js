@@ -23,6 +23,9 @@ const dogs = [
     hasBeenSwiped: false,
     hasBeenLiked: false,
   },
+  {
+    name: "Last",
+  },
 ];
 
 export default dogs;
