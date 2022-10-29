@@ -48,8 +48,9 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-height: 562px;
+  min-height: 562px;
   align-items: center;
+  background-color: antiquewhite;
 }
 
 .profile-section img {
@@ -58,8 +59,8 @@ img {
 }
 
 .no-profiles {
-  color: red;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .bio-section {

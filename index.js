@@ -45,7 +45,7 @@ function getNewDog() {
     if (newDog.name === "Last") {
       return `
       <p class="no-profiles">There's no one new around you...</p>
-      <img src="./images/last-image.jpg" alt="Sad dog image" />
+      <p class="no-profiles">Come back a little later 🐶</p>
       `;
     }
     return newDog.getDogProfileHtml();
