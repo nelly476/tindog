@@ -1,0 +1,64 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Anek Telugu", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.container {
+  position: absolute;
+  width: 400px;
+  left: 0px;
+  top: 0px;
+  right: 0;
+  border: 2px solid red;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+.top-buttons img {
+  max-height: 1.7em;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: 2em;
+  height: 2em;
+  margin: 1em 0;
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.bio-section {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: white;
+  padding: 1em;
+}
