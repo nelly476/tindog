@@ -6,6 +6,7 @@ const dogs = [
     bio: "Art. Literature. Natural wine. Yoga.",
     hasBeenSwiped: false,
     hasBeenLiked: false,
+    message: "hi!",
   },
   {
     name: "Bella",
@@ -14,6 +15,7 @@ const dogs = [
     bio: "Yup, that's my owner. U can meet him if you want",
     hasBeenSwiped: false,
     hasBeenLiked: false,
+    message: "Helloo",
   },
   {
     name: "Teddy",
@@ -22,6 +24,7 @@ const dogs = [
     bio: "How you doin?",
     hasBeenSwiped: false,
     hasBeenLiked: false,
+    message: "Hey u",
   },
   {
     name: "Last",
