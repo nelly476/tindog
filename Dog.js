@@ -23,7 +23,7 @@ class Dog {
       </div>
       <div class="like-button hover" data-like="like">
         <img
-        id="${name}"
+        id=${name}
           class="hover"
           src="./images/icon-heart.png"
           alt="Like"

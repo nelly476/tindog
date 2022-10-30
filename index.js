@@ -46,12 +46,15 @@ function openChats() {
 }
 
 document.addEventListener("mouseover", (e) => {
-  if (dogs.length > 0) {
+  if (dogs.length >= 1) {
     if (e.target.dataset.reject) {
       showBadge("nope-badge");
     } else if (e.target.dataset.like) {
       showBadge("like-badge");
     }
+  } else {
+    hideBadge("nope-badge");
+    hideBadge("like-badge");
   }
 });
 

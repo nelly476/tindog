@@ -53,11 +53,6 @@ img {
   background-color: antiquewhite;
 }
 
-.profile-section img {
-  max-height: 562px;
-  min-width: 100%;
-}
-
 .no-profiles {
   font-weight: bold;
   font-size: 1.2rem;
