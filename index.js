@@ -5,17 +5,15 @@ let swipedDogs = [];
 let likedDogs = [];
 
 document.addEventListener("click", (e) => {
-  if (dogs.length > 0) {
-    if (e.target.dataset.reject) {
+  if (e.target.dataset.reject) {
+    render();
+  } else if (e.target.dataset.like) {
+    addToLiked(e.target);
+    setTimeout(() => {
       render();
-    } else if (e.target.dataset.like) {
-      addToLiked(e.target);
-      setTimeout(() => {
-        render();
-      }, 500);
-    } else if (e.target.dataset.chat) {
-      openChats();
-    }
+    }, 500);
+  } else if (e.target.dataset.chat) {
+    openChats();
   }
 });
 
@@ -75,17 +73,15 @@ function hideBadge(id) {
 }
 
 function getNewDog() {
-  if (dogs.length > 0) {
-    let newDog = new Dog(dogs.shift());
-    swipedDogs.push(newDog);
-    if (newDog.name === "Last") {
-      return `
+  let newDog = new Dog(dogs.shift());
+  swipedDogs.push(newDog);
+  if (newDog.name === "Last") {
+    return `
       <p class="no-profiles">There's no one new around you...</p>
       <p class="no-profiles">Come back a little later 🐶</p>
       `;
-    }
-    return newDog.getDogProfileHtml();
   }
+  return newDog.getDogProfileHtml();
 }
 
 function render() {
