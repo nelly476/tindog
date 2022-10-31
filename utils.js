@@ -2,8 +2,9 @@ function showBadge(id) {
   document.getElementById(id).classList.add("display");
 }
 
-function hideBadge(id) {
-  document.getElementById(id).classList.remove("display");
+function hideBadge() {
+  document.getElementById("nope-badge").classList.remove("display");
+  document.getElementById("like-badge").classList.remove("display");
 }
 
 function showFinalMessage() {

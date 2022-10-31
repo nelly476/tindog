@@ -7,6 +7,7 @@ let chatsHtml = "";
 document.addEventListener("click", (e) => {
   if (e.target.dataset.reject) {
     dog.hasBeenSwiped = true;
+    hideBadge();
     if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
       showFinalMessage();
     } else {
@@ -18,6 +19,7 @@ document.addEventListener("click", (e) => {
   } else if (e.target.dataset.like) {
     dog.hasBeenSwiped = true;
     dog.hasBeenLiked = true;
+    hideBadge();
     chatsHtml += dog.addToChats();
     if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
       setTimeout(() => {
@@ -30,6 +32,7 @@ document.addEventListener("click", (e) => {
       }, 250);
     }
   } else if (e.target.dataset.chat) {
+    hideBadge();
     openChats();
   } else if (e.target.dataset.profiles) {
     openProfiles();
@@ -59,10 +62,8 @@ document.addEventListener("mouseover", (e) => {
 });
 
 document.addEventListener("mouseout", (e) => {
-  if (e.target.dataset.reject) {
-    hideBadge("nope-badge");
-  } else if (e.target.dataset.like) {
-    hideBadge("like-badge");
+  if (e.target.dataset.reject || e.target.dataset.like) {
+    hideBadge();
   }
 });
 
