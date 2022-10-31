@@ -3,6 +3,7 @@ import Dog from "./Dog.js";
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.reject) {
+    dog.hasBeenSwiped = true;
     if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
       showFinalMessage();
     } else {
@@ -10,11 +11,13 @@ document.addEventListener("click", (e) => {
       render();
     }
   } else if (e.target.dataset.like) {
+    dog.hasBeenSwiped = true;
+    dog.hasBeenLiked = true;
+
     if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
       showFinalMessage();
     } else {
       dog = getNewDog();
-      dog.hasBeenLiked = true;
       setTimeout(() => {
         render();
       }, 500);
@@ -41,11 +44,11 @@ document.addEventListener("mouseout", (e) => {
 });
 
 function showBadge(id) {
-  document.getElementById(id).classList.add("transition");
+  document.getElementById(id).classList.add("display");
 }
 
 function hideBadge(id) {
-  document.getElementById(id).classList.remove("transition");
+  document.getElementById(id).classList.remove("display");
 }
 
 function showFinalMessage() {
@@ -63,7 +66,6 @@ function getNewDog() {
 let dog = getNewDog();
 
 function render() {
-  dog.hasBeenSwiped = true;
   document.getElementById("profile-section").innerHTML =
     dog.getDogProfileHtml();
 }

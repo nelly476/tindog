@@ -7,8 +7,8 @@ class Dog {
     const { name, avatar, age, bio, hasBeenLiked, hasBeenSwiped } = this;
 
     return `
-     <img src="${avatar}" alt="Photo">
-     <div class="bio-section">
+     <img class="avatar-image" src="${avatar} "alt="Photo">
+     <div class="bio-section"> 
       <div class="name-age">${name}, ${age}</div>
       <div class="bio">${bio}</div>
       </div>
@@ -23,7 +23,6 @@ class Dog {
       </div>
       <div class="like-button hover" data-like="like">
         <img
-        id=${name}
           class="hover"
           src="./images/icon-heart.png"
           alt="Like"
@@ -33,20 +32,28 @@ class Dog {
     </div>
         `;
   }
-  getChatsHtml(data) {
-    const targetProfile = data.forEach((element) => {
-      return `
-      <div class="chats-section">
-    <img src="${avatar}" alt="Avatar photo" class="avatar-chat">
-    <div class="chat-info">
-      <p>${name}</p>
-      <p>${message}</p>
-    </div>
-    </div>
-      `;
-    });
-    console.log(targetProfile);
+
+  swipeProfile() {
+    this.hasBeenSwiped = true;
   }
+
+  likeProfile() {
+    this.hasBeenLiked = true;
+  }
+  // getChatsHtml(data) {
+  //   const targetProfile = data.forEach((element) => {
+  //     return `
+  //     <div class="chats-section">
+  //   <img src="${avatar}" alt="Avatar photo" class="avatar-chat">
+  //   <div class="chat-info">
+  //     <p>${name}</p>
+  //     <p>${message}</p>
+  //   </div>
+  //   </div>
+  //     `;
+  //   });
+  //   console.log(targetProfile);
+  // }
 }
 
 export default Dog;

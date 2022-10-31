@@ -26,9 +26,6 @@ const dogs = [
     hasBeenLiked: false,
     message: "Hey u",
   },
-  {
-    name: "Last",
-  },
 ];
 
 export default dogs;

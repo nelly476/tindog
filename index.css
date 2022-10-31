@@ -21,7 +21,10 @@ img {
   border: 4px solid black;
   border-radius: 25px;
   margin: 0 auto;
-  padding: 0.3em;
+  padding-top: 0.3em;
+  height: 630px;
+  display: flex;
+  flex-direction: column;
 }
 
 .top-buttons img {
@@ -32,25 +35,27 @@ img {
   display: flex;
   justify-content: space-between;
   padding: 0 0.3em;
-  margin-bottom: 0.5em;
 }
 
 .bottom-buttons {
   display: flex;
   justify-content: center;
   column-gap: 1.5em;
-  height: fit-content;
-  margin: 0.4em 0 0;
+  margin: 0.4em 0;
   position: relative;
 }
 
 .profile-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 562px;
   align-items: center;
-  background-color: antiquewhite;
+  margin-top: 0.6em;
+}
+
+.avatar-image {
+  height: 80%;
+  width: 96%;
+  margin: 0;
 }
 
 .no-profiles {
@@ -73,8 +78,8 @@ img {
   align-items: center;
   justify-content: center;
   background: white;
-  width: 85px;
-  height: 85px;
+  width: 3.5em;
+  height: 3.5em;
   box-shadow: 0px 10px 20px #e9e9ea;
 }
 
@@ -86,16 +91,15 @@ img {
 .like-badge,
 .nope-badge {
   position: absolute;
-  top: 3.5em;
-  left: 0;
-  width: 60%;
-  transform: rotate(-25deg) scale(0.8);
+  top: 4.3em;
+  left: 1em;
+  width: 50%;
+  transform: rotate(-25deg);
   display: none;
 }
 
-.transition {
+.display {
   display: inline;
-  transition: 200ms;
 }
 
 .hover:hover {
