@@ -11,27 +11,43 @@ document.addEventListener("click", (e) => {
       showFinalMessage();
     } else {
       dog = getNewDog();
-      render();
+      setTimeout(() => {
+        render();
+      }, 250);
     }
   } else if (e.target.dataset.like) {
     dog.hasBeenSwiped = true;
     dog.hasBeenLiked = true;
     chatsHtml += dog.addToChats();
     if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
-      showFinalMessage();
+      setTimeout(() => {
+        showFinalMessage();
+      }, 250);
     } else {
       dog = getNewDog();
       setTimeout(() => {
         render();
-      }, 500);
+      }, 250);
     }
   } else if (e.target.dataset.chat) {
     openChats();
+  } else if (e.target.dataset.profiles) {
+    openProfiles();
   }
 });
 
 function openChats() {
+  document.getElementById("messages-title").classList.remove("hidden");
   document.getElementById("profile-section").innerHTML = chatsHtml;
+}
+
+function openProfiles() {
+  if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
+    showFinalMessage();
+  } else {
+    document.getElementById("messages-title").classList.add("hidden");
+    render();
+  }
 }
 
 document.addEventListener("mouseover", (e) => {

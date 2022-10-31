@@ -39,8 +39,8 @@ class Dog {
     <div class="chats-section">
   <img src="${avatar}" alt="Avatar photo" class="avatar-chat">
   <div class="chat-info">
-    <p>${name}</p>
-    <p>${message}</p>
+    <p><b>${name}</b></p>
+    <p class="grey">${message}</p>
   </div>
   </div>
     `;
