@@ -1,58 +1,34 @@
 import dogs from "./data.js";
 import Dog from "./Dog.js";
 
-let swipedDogs = [];
-let likedDogs = [];
-
 document.addEventListener("click", (e) => {
   if (e.target.dataset.reject) {
-    render();
-  } else if (e.target.dataset.like) {
-    addToLiked(e.target);
-    setTimeout(() => {
+    if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
+      showFinalMessage();
+    } else {
+      dog = getNewDog();
       render();
-    }, 500);
+    }
+  } else if (e.target.dataset.like) {
+    if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
+      showFinalMessage();
+    } else {
+      dog = getNewDog();
+      dog.hasBeenLiked = true;
+      setTimeout(() => {
+        render();
+      }, 500);
+    }
   } else if (e.target.dataset.chat) {
     openChats();
   }
 });
 
-function addToLiked(data) {
-  const targetDog = swipedDogs.filter((dog) => dog.name === data.id);
-  likedDogs.push(targetDog[0]);
-}
-
-function getChatsHtml() {
-  let chatHtml = "";
-  likedDogs.forEach((dog) => {
-    chatHtml += `
-     <div class="chat-section">
-     <div>
-  <img src="${dog.avatar}" alt="Avatar" class="chat-avatar">
-  </div>
-  <div class="chat-info">
-    <p>${dog.name}</p>
-    <p>${dog.message}</p>
-  </div>
-</div>`;
-  });
-  return chatHtml;
-}
-
-function openChats() {
-  document.getElementById("profile-section").innerHTML = getChatsHtml();
-}
-
 document.addEventListener("mouseover", (e) => {
-  if (dogs.length >= 1) {
-    if (e.target.dataset.reject) {
-      showBadge("nope-badge");
-    } else if (e.target.dataset.like) {
-      showBadge("like-badge");
-    }
-  } else {
-    hideBadge("nope-badge");
-    hideBadge("like-badge");
+  if (e.target.dataset.reject) {
+    showBadge("nope-badge");
+  } else if (e.target.dataset.like) {
+    showBadge("like-badge");
   }
 });
 
@@ -72,20 +48,24 @@ function hideBadge(id) {
   document.getElementById(id).classList.remove("transition");
 }
 
-function getNewDog() {
-  let newDog = new Dog(dogs.shift());
-  swipedDogs.push(newDog);
-  if (newDog.name === "Last") {
-    return `
-      <p class="no-profiles">There's no one new around you...</p>
-      <p class="no-profiles">Come back a little later 🐶</p>
-      `;
-  }
-  return newDog.getDogProfileHtml();
+function showFinalMessage() {
+  document.getElementById("profile-section").innerHTML = `
+  <p class="no-profiles">There's no one new around you...</p>
+  <p class="no-profiles">Come back a little later 🐶</p>
+  `;
 }
 
+function getNewDog() {
+  const nextDogsData = dogs.shift();
+  return new Dog(nextDogsData);
+}
+
+let dog = getNewDog();
+
 function render() {
-  document.getElementById("profile-section").innerHTML = getNewDog();
+  dog.hasBeenSwiped = true;
+  document.getElementById("profile-section").innerHTML =
+    dog.getDogProfileHtml();
 }
 
 render();
