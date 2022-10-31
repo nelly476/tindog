@@ -51,6 +51,7 @@ img {
   align-items: center;
   margin-top: 0.6em;
   height: 77%;
+  position: relative;
 }
 
 .avatar-image {
@@ -70,7 +71,7 @@ img {
 .bio-section {
   position: absolute;
   left: 0;
-  bottom: 5.2em;
+  bottom: 0.4em;
   color: white;
   padding: 1em;
 }
