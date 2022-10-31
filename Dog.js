@@ -32,9 +32,19 @@ class Dog {
     </div>
         `;
   }
-
-  openChats() {
-    console.log(this.data);
+  addToChats() {
+    const { name, avatar, message } = this;
+    let chatHtml = "";
+    chatHtml += `
+    <div class="chats-section">
+  <img src="${avatar}" alt="Avatar photo" class="avatar-chat">
+  <div class="chat-info">
+    <p>${name}</p>
+    <p>${message}</p>
+  </div>
+  </div>
+    `;
+    return chatHtml;
   }
 }
 

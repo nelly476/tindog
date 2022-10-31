@@ -2,6 +2,8 @@ import dogs from "./data.js";
 import Dog from "./Dog.js";
 import { showBadge, hideBadge, showFinalMessage } from "./utils.js";
 
+let chatsHtml = "";
+
 document.addEventListener("click", (e) => {
   if (e.target.dataset.reject) {
     dog.hasBeenSwiped = true;
@@ -14,7 +16,7 @@ document.addEventListener("click", (e) => {
   } else if (e.target.dataset.like) {
     dog.hasBeenSwiped = true;
     dog.hasBeenLiked = true;
-
+    chatsHtml += dog.addToChats();
     if (dog.name === "Teddy" && dog.hasBeenSwiped === true) {
       showFinalMessage();
     } else {
@@ -27,6 +29,10 @@ document.addEventListener("click", (e) => {
     openChats();
   }
 });
+
+function openChats() {
+  document.getElementById("profile-section").innerHTML = chatsHtml;
+}
 
 document.addEventListener("mouseover", (e) => {
   if (e.target.dataset.reject) {
