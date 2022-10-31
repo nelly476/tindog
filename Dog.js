@@ -33,7 +33,9 @@ class Dog {
         `;
   }
 
-  addToChats() {}
+  openChats() {
+    console.log(this.data);
+  }
 }
 
 export default Dog;
