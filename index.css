@@ -42,7 +42,10 @@ img {
   display: flex;
   justify-content: center;
   column-gap: 1.5em;
-  position: relative;
+  position: absolute;
+  bottom: 0.7em;
+  left: 0;
+  right: 0;
 }
 
 .profile-section {
@@ -151,15 +154,14 @@ img {
   margin-bottom: 0.5em;
 }
 
-@media (max-width: 600px) {
-  .container {
-    height: 88vh;
-  }
+@media (max-width: 500px) {
   .profile-section {
-    height: 80%;
+    min-height: 70%;
   }
-  .like-badge,
-  .nope-badge {
-    height: 1em;
+}
+
+@media (max-width: 375px) {
+  .profile-section {
+    height: 70%;
   }
 }
