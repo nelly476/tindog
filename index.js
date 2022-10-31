@@ -1,5 +1,6 @@
 import dogs from "./data.js";
 import Dog from "./Dog.js";
+import { showBadge, hideBadge, showFinalMessage } from "./utils.js";
 
 document.addEventListener("click", (e) => {
   if (e.target.dataset.reject) {
@@ -42,21 +43,6 @@ document.addEventListener("mouseout", (e) => {
     hideBadge("like-badge");
   }
 });
-
-function showBadge(id) {
-  document.getElementById(id).classList.add("display");
-}
-
-function hideBadge(id) {
-  document.getElementById(id).classList.remove("display");
-}
-
-function showFinalMessage() {
-  document.getElementById("profile-section").innerHTML = `
-  <p class="no-profiles">There's no one new around you...</p>
-  <p class="no-profiles">Come back a little later 🐶</p>
-  `;
-}
 
 function getNewDog() {
   const nextDogsData = dogs.shift();

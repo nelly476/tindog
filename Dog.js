@@ -33,27 +33,7 @@ class Dog {
         `;
   }
 
-  swipeProfile() {
-    this.hasBeenSwiped = true;
-  }
-
-  likeProfile() {
-    this.hasBeenLiked = true;
-  }
-  // getChatsHtml(data) {
-  //   const targetProfile = data.forEach((element) => {
-  //     return `
-  //     <div class="chats-section">
-  //   <img src="${avatar}" alt="Avatar photo" class="avatar-chat">
-  //   <div class="chat-info">
-  //     <p>${name}</p>
-  //     <p>${message}</p>
-  //   </div>
-  //   </div>
-  //     `;
-  //   });
-  //   console.log(targetProfile);
-  // }
+  addToChats() {}
 }
 
 export default Dog;
