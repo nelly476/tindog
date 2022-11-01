@@ -154,14 +154,8 @@ img {
   margin-bottom: 0.5em;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .profile-section {
     min-height: 70%;
-  }
-}
-
-@media (max-width: 375px) {
-  .profile-section {
-    height: 70%;
   }
 }
